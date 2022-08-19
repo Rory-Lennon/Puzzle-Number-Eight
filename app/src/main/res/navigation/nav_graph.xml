@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/gameFragment">
+
+    <fragment
+        android:id="@+id/introFragment"
+        android:name="net.blackseedapps.puzzle8.fragments.IntroFragment"
+        android:label="fragment_intro"
+        tools:layout="@layout/fragment_intro" >
+        <action
+            android:id="@+id/action_introFragment_to_gameFragment"
+            app:destination="@id/gameFragment"
+            app:popUpTo="@id/introFragment" />
+        <action
+            android:id="@+id/action_introFragment_to_introExceptionFragment"
+            app:destination="@id/introExceptionFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/gameFragment"
+        android:name="net.blackseedapps.puzzle8.fragments.GameFragment"
+        android:label="fragment_game"
+        tools:layout="@layout/fragment_game">
+        <action
+            android:id="@+id/action_gameFragment_to_optionsFragment"
+            app:destination="@id/optionsFragment"
+            app:popUpTo="@id/gameFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/optionsFragment"
+        android:name="net.blackseedapps.puzzle8.fragments.OptionsFragment"
+        android:label="fragment_options"
+        tools:layout="@layout/fragment_options" />
+    <fragment
+        android:id="@+id/introExceptionFragment"
+        android:name="net.blackseedapps.puzzle8.fragments.IntroExceptionFragment"
+        android:label="fragment_intro_exception"
+        tools:layout="@layout/fragment_intro_exception" >
+        <action
+            android:id="@+id/action_introExceptionFragment_to_gameFragment"
+            app:destination="@id/gameFragment" />
+    </fragment>
+</navigation>
